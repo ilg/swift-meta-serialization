@@ -19,6 +19,7 @@
 
 import Foundation
 @testable import MetaSerialization
+import OrderedCollections
 
 protocol Example3Representation: Representation {}
 
@@ -54,7 +55,7 @@ extension String: Example3Representation {
                 self += "*\(element)*,"
             }
             
-        } else if let dictionary = meta as? [String : Meta] {
+        } else if let dictionary = meta as? OrderedDictionary<String, Meta> {
             
             self = "keyed;"
             for (key, value) in dictionary {

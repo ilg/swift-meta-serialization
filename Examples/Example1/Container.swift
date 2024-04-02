@@ -19,6 +19,7 @@
 
 import Foundation
 @testable import MetaSerialization
+import OrderedCollections
 
 enum Example1Container {
     
@@ -28,7 +29,7 @@ enum Example1Container {
     case int(Int)
     case double(Double)
     case array([Example1Container])
-    case dictionary([String:Example1Container])
+    case dictionary(OrderedDictionary<String,Example1Container>)
     
 }
 

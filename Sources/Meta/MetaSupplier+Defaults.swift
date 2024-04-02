@@ -18,11 +18,12 @@
 //
 
 import Foundation
+import OrderedCollections
 
 public extension MetaSupplier {
     
     func keyedContainerMeta() -> EncodingKeyedContainerMeta {
-        return Dictionary<String, Meta>()
+        return OrderedDictionary<String, Meta>()
     }
     
     func unkeyedContainerMeta() -> EncodingUnkeyedContainerMeta {

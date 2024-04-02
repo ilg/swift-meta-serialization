@@ -11,10 +11,14 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/Quick/Quick.git", from: "2.2.0"),
         .package(url: "https://github.com/Quick/Nimble.git", from: "8.0.5"),
+        .package(url: "https://github.com/apple/swift-collections.git", from: "1.1.0"),
     ],
     targets: [
         .target(
             name: "MetaSerialization",
+            dependencies: [
+                .product(name: "OrderedCollections", package: "swift-collections"),
+            ],
             path: "Sources"
         ),
         .testTarget(

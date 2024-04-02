@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import OrderedCollections
 @testable import MetaSerialization
 
 enum Example1 {
@@ -38,7 +39,7 @@ func encodeToContainer(_ input: Meta) -> Example1Container {
         
         return  Example1Container.array( metaArray.map(encodeToContainer) )
         
-    } else if let metaDictionary = input as? [String : Meta] {
+    } else if let metaDictionary = input as? OrderedDictionary<String, Meta> {
         
         return Example1Container.dictionary( metaDictionary.mapValues(encodeToContainer) )
         
